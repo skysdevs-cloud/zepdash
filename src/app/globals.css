@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+*{
+  box-sizing: border-box;
+ }
+.subheader {
+  background: #0b0b0b;
+  border-bottom: 4px solid #fbbf24;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Yellow Curve */
+.subheader::before {
+  content: "";
+  position: absolute;
+  left: -60px;
+  top: 0;
+  width: 140px;
+  height: 100%;
+  background: #fbbf24;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+/* Right Yellow Curve */
+.subheader::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: 0;
+  width: 140px;
+  height: 100%;
+  background: #fbbf24;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #fbbf24;
+}
+.slider-arrow {
+    color: #fff;
+    cursor: pointer;
+    z-index: 20;
+    background: #fff3;
+    border-radius: 9999px;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    font-size: 32px;
+    font-weight: bold;
+    transition: all .35s;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-bottom: 8px;
+}
+
+.slider-arrow:hover {
+  background: #facc15; /* yellow-400 */
+  color: black;
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.6);
+}
+.spotlight-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.spotlight-btn.yellow {
+  background: #facc15;
+  color: black;
+}
+
+.spotlight-btn.gray {
+  background: #000000;
+  color: black;
+}
+
+.spotlight-btn .spotlight {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fde047, transparent 70%);
+  transform: translateY(-50%) scale(0);
+  pointer-events: none;
+}
+/* ===== COMMON SELECT TRIGGER ===== */
+.select-trigger {
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  border: 1.5px solid #d1d5db; /* gray-300 */
+  border-radius: 12px;
+  padding: 0 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+/* Selected value */
+.select-trigger.selected {
+  color: #efa701;
+  border-color: #efa701;
+}
+
+/* Arrow */
+.arrow {
+  transition: transform 0.3s ease;
+}
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* ===== CAB OPTIONS ===== */
+.cab-options,
+.glass-options {
+  position: absolute;
+  width: 100%;
+  margin-top: 6px;
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.35s ease;
+  z-index: 30;
+}
+
+.cab-options.open,
+.glass-options.open {
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LIQUID GLASS OPTIONS ===== */
+.cab-option,
+.glass-option {
+  padding: 12px 16px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.35);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.cab-option:hover,
+.glass-option:hover {
+  background: #facc15; /* yellow-400 */
+}
+
+/* Active (selected) */
+.cab-option.active,
+.glass-option.active {
+  background: #efa701;
+  color: #000;
+}
+/* ===== SELECTED TRIGGER (ALL: CAB, AGE, MODEL) ===== */
+.select-trigger.selected {
+  color: #efa701;
+  border-color: #efa701;
+  box-shadow: 0 0 0 1px rgba(239, 167, 1, 0.3);
+}
+
+/* ===== ACTIVE OPTION (AGE + MODEL ALSO) ===== */
+.glass-option.active {
+  background: #efa701;
+  color: #000;
+  font-weight: 700;
+}
+
+/* Hover still yellow-400 */
+.glass-option:hover {
+  background: #facc15;
+  color: #000;
+}
+.input.selected {
+  border-color: #EFA701;
+  box-shadow: 0 0 0 1px #EFA701;
+}
+.check-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  margin-top: 4px;
+  flex-shrink: 0;
+  background-color: #EFA701;
+  border-radius: 50%;
+}
+
+.check-icon:before {
+    content: "";
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    transform: rotate(45deg);
+}
+.heading-divider {
+    display: inline-block;
+    position: relative;
+    border: 3px solid #FFB300;
+    width: 90px;
+    height: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.heading-divider::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    height: 6px;
+    width: 14px;
+    border-radius: 50px;
+    background: #FFB300;
+    animation: heading-move 2.5s ease-in-out infinite alternate;
+}
+
+/* Left → Right → Left */
+@keyframes heading-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(66px);
+    }
+}
+.rate-check {
+  position: relative;
+  padding-left: 28px;
+  font-weight: 500;
+}
+
+.rate-check::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 5px;
+  border-left: 3px solid #fbbf24;  /* yellow */
+  border-bottom: 3px solid #fbbf24;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.rate-check::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 10px;
+  height: 5px;
+  border-left: 3px solid #fbbf24;
+  border-bottom: 3px solid #fbbf24;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.choose-area {
+    position: relative;
+    background: #111111;
+    z-index: 1;
+}
+.choose-area::before {
+    content: "";
+    position: absolute;
+    background-image: url(/images/wayChoseshape-6.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.04;
+    z-index: -1;
+}
+.clip-shape {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease forwards;
+}
