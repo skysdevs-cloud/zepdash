@@ -1,115 +1,103 @@
-"use client";
-import { Scale } from "lucide-react";
 import Image from "next/image";
-import SpotlightButton from "./SpotlightButton";
+import { CheckCircle, Phone } from "lucide-react";
 
-const AboutIntro = () => {
+export default function AboutIntro() {
   return (
-    <section className="w-full bg-white pt-60 pb-20">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-[#f3f7ff] py-20">
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-center">
 
-        {/* LEFT IMAGE AREA */}
-        <div className="relative flex justify-center">
-          {/* Badge */}
-          <div className="absolute -top-6 left-4 z-20 bg-black text-white px-5 py-3 rounded-full flex items-center gap-3 shadow-lg">
-            <span className="bg-yellow-400 p-2 text-black w-10 h-10 flex items-center justify-center rounded-full font-bold">
-              <Image
-              src="/Images/taxi-booking.svg"
-              alt="Agrotech Logo"
-              width={30}
-              height={30}
-              priority
-            className="relative z-10 w-full max-w-md"
-            style={{
-              transform:'Scale(1.3)'
-            }}
-            /> 
-            </span>
-            <span className="text-sm font-medium">
-            30+  Years Of <br /> Quality Service
-            </span>
-          </div>
-
-          {/* Yellow Circle */}
-          <div className="absolute w-90 h-90 bg-yellow-400 rounded-full -z-10"></div>
-
-          {/* Car Image */}
-          {/* <img
-            src="/imags/imageTexi01.png"
-            alt="Taxi"
-            className="relative z-10 w-full max-w-md"
-          /> */}
-           <Image
-              src="/Images/imageTexi01.png"
-              alt="Agrotech Logo"
-              width={300}
-              height={100}
-              priority
-            className="relative z-10 w-full max-w-md"
-            style={{
-              transform:'Scale(1.3)'
-            }}
-            />
+        {/* Left Image */}
+        <div className="relative overflow-hidden rounded-3xl group">
+          <Image
+            src="/image/aboutIntro.jpg"
+            alt="about"
+            width={550}
+            height={500}
+            className="rounded-3xl object-cover transition-transform duration-500 group-hover:scale-110"
+          />
         </div>
 
-        {/* RIGHT CONTENT */}
+        {/* Right Content */}
         <div>
-          <p className="text-yellow-400 font-semibold tracking-widest mb-3">
-            ABOUT US
+
+          {/* Tag */}
+          <p className="text-blue-600 font-semibold uppercase mb-2 flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+            About Us
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-6">
-            We Provide Trusted{" "}
-            <span className="text-yellow-400">Cab Service</span> In The World
+          {/* Heading */}
+          <h2 className="text-4xl font-bold text-gray-900 leading-snug mb-4 relative group hover:text-blue-600 transition">
+            Leading with technology <br />
+            delivering with trust.
+            <span className="absolute left-0 -bottom-2 w-20 h-[3px] bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></span>
           </h2>
 
+          {/* Description */}
           <p className="text-gray-600 mb-6">
-            There are many variations of passages of Lorem Ipsum available,
-            but the majority have suffered alteration in some form, by injected
-            humour.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat pariatur. Excepteur sint occaecat
+            cupidatat non proident.
           </p>
 
-          {/* Points */}
-        <ul className="space-y-4 mb-8">
-  <li className="flex items-start gap-3">
-    <span className="check-icon"></span>
-    <span className="text-gray-700">
-      At vero eos et accusamus et iusto odio.
-    </span>
-  </li>
+          <hr className="mb-6" />
 
-  <li className="flex items-start gap-3">
-    <span className="check-icon"></span>
-    <span className="text-gray-700">
-      Established fact that a reader will be distracted.
-    </span>
-  </li>
+          {/* Features */}
+          <div className="space-y-4 mb-8">
 
-  <li className="flex items-start gap-3">
-    <span className="check-icon"></span>
-    <span className="text-gray-700">
-      Sed ut perspiciatis unde omnis iste natus sit.
-    </span>
-  </li>
-</ul>
+            <div className="group flex items-start gap-3 p-2 rounded-lg hover:bg-white hover:shadow transition">
+              <CheckCircle className="text-blue-600 mt-1 group-hover:scale-110 transition" />
+              <div>
+                <h4 className="font-semibold group-hover:text-blue-600 transition">
+                  Dedicated 24/7 support
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  Duis deserunt mollit leo aute
+                </p>
+              </div>
+            </div>
 
-          {/* Button */}
-          {/* <button className="bg-yellow-400 text-black font-semibold px-8 py-4 rounded-full hover:bg-yellow-500 transition">
-            DISCOVER MORE →
-          </button> */}
-           <SpotlightButton
-                  text="DISCOVER MORE →"
-                  // href="/book"
-                  bgColor="bg-[#EFA701]"
-                  hoverBgColor="hover:bg-black"
-                  textColor="text-black"
-                  hoverTextColor="hover:text-white"
-                />
+            <div className="group flex items-start gap-3 p-2 rounded-lg hover:bg-white hover:shadow transition">
+              <CheckCircle className="text-blue-600 mt-1 group-hover:scale-110 transition" />
+              <div>
+                <h4 className="font-semibold group-hover:text-blue-600 transition">
+                  Agile & fast working
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  Duis deserunt mollit leo aute
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Call Box */}
+          <div className="group flex items-center gap-4 bg-white shadow-md rounded-xl p-5 max-w-sm
+                          transition-all duration-300
+                          hover:shadow-xl hover:-translate-y-1">
+
+            <div className="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center
+                            transition-transform duration-300
+                            group-hover:rotate-12 group-hover:scale-110">
+              <Phone className="text-white" />
+            </div>
+
+            <div>
+              <p className="text-sm text-gray-500">
+                Call to ask any question
+              </p>
+              <h4 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">
+                + 91 6307 764 702
+              </h4>
+              <p className="text-xs text-gray-500">
+                Around-the-clock service available
+              </p>
+            </div>
+
+          </div>
+
         </div>
-
       </div>
     </section>
   );
-};
-
-export default AboutIntro;
+}

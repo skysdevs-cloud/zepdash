@@ -2,20 +2,26 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Mail, MapPin, Phone,Facebook,Linkedin,Twitter,Pin } from "lucide-react";
-
+import {
+  ChevronDown,
+  Mail,
+  MapPin,
+  Phone,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Pin,
+  Menu,
+  X,
+} from "lucide-react";
 
 export default function MainHeader() {
   const [isSticky, setIsSticky] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      setIsSticky(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,123 +31,95 @@ export default function MainHeader() {
   return (
     <>
       {/* ===== TOP SUB HEADER ===== */}
-      <div className="w-full bg-blue-600 text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between gap-2">
-
-          {/* Left Info */}
-          <div className="flex flex-wrap items-center gap-5">
+      <div className="hidden md:block w-full bg-blue-600 text-white text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+          {/* Left */}
+          <div className="flex items-center gap-5">
             <span className="flex items-center gap-2">
-              <Mail size={16} />
-              support@zepdash.com
+              <Mail size={16} /> support@zepdash.com
             </span>
-
             <span className="flex items-center gap-2">
-              <MapPin size={16} />
-              189/C Jalaun Road New Patel Nagar Orai Jalaun Uttar Pradesh 285001
+              <MapPin size={16} /> Orai, Uttar Pradesh
             </span>
-
             <span className="flex items-center gap-2">
-              <Phone size={16} />
-              +91 6307 764 702
+              <Phone size={16} /> +91 6307 764 702
             </span>
           </div>
 
-          {/* Right Social */}
+          {/* Right */}
           <div className="flex items-center gap-4">
-
-  <a
-    href="#"
-    target="_blank"
-    className="hover:text-lime-400 transition cursor-pointer"
-  >
-    <Facebook size={18} />
-  </a>
-
-  <a
-    href="https://www.linkedin.com/company/zepdash"
-    target="_blank"
-    className="hover:text-lime-400 transition cursor-pointer"
-  >
-    <Linkedin size={18} />
-  </a>
-
-  <a
-    href="#"
-    target="_blank"
-    className="hover:text-lime-400 transition cursor-pointer"
-  >
-    <Twitter size={18} />
-  </a>
-
-  <a
-    href="#"
-    target="_blank"
-    className="hover:text-lime-400 transition cursor-pointer"
-  >
-    <Pin size={18} />
-  </a>
-
-</div>
-
-
+            <Facebook size={18} className="hover:text-lime-400 cursor-pointer" />
+            <Linkedin size={18} className="hover:text-lime-400 cursor-pointer" />
+            <Twitter size={18} className="hover:text-lime-400 cursor-pointer" />
+            <Pin size={18} className="hover:text-lime-400 cursor-pointer" />
+          </div>
         </div>
       </div>
 
       {/* ===== MAIN HEADER ===== */}
       <header
         className={`
-          w-full z-50
-          transition-all duration-500 ease-in-out
-          transform-gpu
+          w-full z-[999] transition-all duration-500
           ${isSticky
-            ? "fixed top-0 bg-black/70 backdrop-blur-xl shadow-lg"
-            : "absolute top-[35px] bg-black/30 backdrop-blur-md"}
+            ? "fixed top-0 bg-black/80 backdrop-blur-xl shadow-lg"
+            : "absolute top-0 md:top-[35px] bg-black/40 backdrop-blur-md"}
         `}
       >
-        <div
-          className={`
-            max-w-7xl mx-auto px-6
-            flex items-center justify-between
-            transition-all duration-500
-            ${isSticky ? "h-16" : "h-20"}
-          `}
-        >
-
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-           <img src="/image/zepdashLogo.webp" alt="logoImg" width={150}/>
-          </div>
+          <img
+            src="/image/zepdashLogo.webp"
+            alt="logo"
+            className="w-[120px] md:w-[150px]"
+          />
 
-          {/* Menu */}
+          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8 text-white font-medium">
+            <Link href="/" className="hover:text-blue-400">Home</Link>
 
-            <Link href="/" className="hover:text-blue-400 transition">
-              Home
-            </Link>
-
-            <div className="flex items-center gap-1 hover:text-blue-400 cursor-pointer transition">
-              Explore <ChevronDown size={16} />
-            </div>
-
-            <div className="flex items-center gap-1 hover:text-blue-400 cursor-pointer transition">
-              Solutions <ChevronDown size={16} />
-            </div>
-
-            <div className="flex items-center gap-1 hover:text-blue-400 cursor-pointer transition">
-              Case Studies <ChevronDown size={16} />
-            </div>
-
-            <div className="flex items-center gap-1 hover:text-blue-400 cursor-pointer transition">
-              Tech News <ChevronDown size={16} />
-            </div>
-
+            {["Explore", "Solutions", "Case Studies", "Tech News"].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-1 cursor-pointer hover:text-blue-400"
+              >
+                {item} <ChevronDown size={16} />
+              </div>
+            ))}
           </nav>
 
-          {/* Button */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition cursor-pointer">
+          {/* Desktop Button */}
+          <button className="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full">
             Get a Quote
           </button>
 
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* ===== MOBILE MENU ===== */}
+        <div
+          className={`
+            md:hidden overflow-hidden transition-all duration-500
+            ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
+            bg-black/95 backdrop-blur-xl
+          `}
+        >
+          <nav className="flex flex-col px-6 py-4 gap-4 text-white">
+            <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="#" onClick={() => setIsOpen(false)}>Explore</Link>
+            <Link href="#" onClick={() => setIsOpen(false)}>Solutions</Link>
+            <Link href="#" onClick={() => setIsOpen(false)}>Case Studies</Link>
+            <Link href="#" onClick={() => setIsOpen(false)}>Tech News</Link>
+
+            <button className="mt-3 bg-blue-600 hover:bg-blue-700 py-2 rounded-full">
+              Get a Quote
+            </button>
+          </nav>
         </div>
       </header>
     </>

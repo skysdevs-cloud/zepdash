@@ -9,11 +9,20 @@ import WhyChooseUs from "@/compontes/WhyChooseUs";
 import OurExpertDrivers from "@/compontes/OurExpertDrivers";
 import TaxiRate from "@/compontes/TaxiRate";
 import OurAwesomeFeature from "@/compontes/OurAwesomeFeature";
+import LogoSlider from "@/compontes/LogoSlider";
+import ServiceSlider from "@/compontes/ServiceSlider";
+import HeroCTA01 from "@/compontes/HeroCTA01";
+import WorkProcess from "@/compontes/WorkProcess";
 
 export default function Home() {
   return (
     <main >
      <SlidrBox/>
-    </main>
+     {/* <LogoSlider/> */}
+     <ServiceSlider/>
+     <AboutIntro/>    
+     <HeroCTA01/>
+     <WorkProcess/>
+     </main>
   );
 }
