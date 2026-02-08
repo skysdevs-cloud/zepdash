@@ -3,50 +3,63 @@
 import Image from "next/image";
 
 const logos = [
-  "/image/logoSlide01.png",
-  "/image/logoSlide01.png",
-  "/image/logoSlide01.png",
-  "/image/logoSlide01.png",
-  "/image/logoSlide01.png",
-  "/image/logoSlide01.png",
+  "/image/logoSlide03.png",
+  "/image/logoSlide02.png",
+  "/image/logoSlide03.png",
+  "/image/logoSlide04.png",
+  "/image/logoSlide05.png",
+  "/image/logoSlide02.png",
 ];
 
 export default function LogoSlider() {
   return (
-    <div className="w-full overflow-hidden bg-white py-10 pt-40">
-      <div className="relative flex">
+    <div className="relative w-full overflow-hidden bg-white py-0 sm:py-16 md:pt-36">
 
-        {/* Track */}
-        <div className="flex animate-marquee whitespace-nowrap hover:[animation-play-state:paused]">
+      {/* Gradient Fade Left */}
+      <div className="
+        pointer-events-none absolute left-0 top-0 h-full
+        w-16 sm:w-24 md:w-32
+        bg-gradient-to-r from-white to-transparent
+        z-10
+      " />
 
-          {/* First Set */}
-          {logos.map((logo, i) => (
-            <div key={i} className="mx-12 flex items-center">
-              <Image
-                src={logo}
-                alt="logo"
-                width={320}
-                height={100}
-                className="opacity-60 hover:opacity-100 transition"
-              />
-            </div>
-          ))}
+      {/* Gradient Fade Right */}
+      <div className="
+        pointer-events-none absolute right-0 top-0 h-full
+        w-16 sm:w-24 md:w-32
+        bg-gradient-to-l from-white to-transparent
+        z-10
+      " />
 
-          {/* Duplicate Set (for seamless loop) */}
-          {logos.map((logo, i) => (
-            <div key={`dup-${i}`} className="mx-12 flex items-center">
-              <Image
-                src={logo}
-                alt="logo"
-               width={320}
-height={100}
-
-                className="opacity-60 hover:opacity-100 transition"
-              />
-            </div>
-          ))}
-
-        </div>
+      {/* Track */}
+      <div className="
+        flex w-max
+        animate-marquee
+        gap-10 sm:gap-14 md:gap-20
+        hover:[animation-play-state:paused]
+      ">
+        {[...logos, ...logos].map((logo, i) => (
+          <div
+            key={i}
+            className="flex items-center justify-center"
+          >
+            <Image
+              src={logo}
+              alt="company logo"
+              width={180}
+              height={80}
+              className="
+                object-contain
+                w-24 sm:w-32 md:w-44
+                opacity-70
+                transition-all duration-300
+                hover:opacity-100
+                hover:scale-110
+                active:scale-105
+              "
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 *{
   box-sizing: border-box;
+  user-select: none;
  }
 .subheader {
   background: #0b0b0b;
@@ -331,4 +332,192 @@
 
 .animate-marquee {
   animation: marquee 18s linear infinite;
+}
+/* NAV BUTTON */
+.navBtn{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid #d1d5db;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+}
+.navBtn:hover{
+  background:#2563eb;
+  color:#fff;
+  transform:scale(1.1);
+}
+
+/* CARD */
+.projectCard{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.4s;
+  position:relative;
+}
+.projectCard:hover{
+  box-shadow:0 25px 60px rgba(37,99,235,.25);
+}
+
+/* IMAGE */
+.cardImage{
+  transition:.7s;
+}
+.projectCard:hover .cardImage{
+  transform:scale(1.12);
+}
+
+/* OVERLAY */
+.cardOverlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+  opacity:0;
+  transition:.4s;
+}
+.projectCard:hover .cardOverlay{
+  opacity:1;
+}
+
+/* TAG */
+.tag{
+  background:#f1f5f9;
+  padding:4px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+/* TITLE */
+.title{
+  margin-top:12px;
+  font-size:18px;
+  font-weight:600;
+  position:relative;
+  transition:.3s;
+}
+.projectCard:hover .title{
+  color:#2563eb;
+}
+
+/* UNDERLINE */
+.title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:linear-gradient(90deg,#2563eb,#60a5fa);
+  transition:.4s;
+}
+.projectCard:hover .title::after{
+  width:100%;
+}
+
+/* MAGNETIC */
+.magnetic{
+  will-change:transform;
+}
+
+/* MOUSE LIGHT */
+.magnetic::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(600px circle at var(--x) var(--y),
+  rgba(59,130,246,.18),
+  transparent 40%);
+  opacity:0;
+  transition:.4s;
+  pointer-events:none;
+}
+.magnetic:hover::before{
+  opacity:1;
+}
+
+/* CTA GLASS */
+.glassCard{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  border-radius:16px;
+  padding:20px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  color:white;
+  transition:.3s;
+}
+.glassCard:hover{
+  transform:scale(1.05);
+}
+
+/* CALL BTN */
+.callBtn{
+  margin-top:6px;
+  background:#2563eb;
+  padding:6px 16px;
+  border-radius:999px;
+  font-size:13px;
+  transition:.3s;
+}
+.callBtn:hover{
+  background:#1e40af;
+}
+/* DISABLED NAV BUTTON */
+.navDisabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+  background: transparent !important;
+  transform: none !important;
+}
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.22),
+    rgba(255,255,255,0.08)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+/* SOCIAL ICONS */
+.socialIcon {
+  cursor: pointer;
+  transition: all 0.35s ease;
+  color: white;
+}
+
+.socialIcon:hover {
+  color: #38bdf8;
+  fill: #38bdf8;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.7));
+}
+
+/* INFO ICONS */
+.infoIcon {
+  transition: all 0.3s ease;
+}
+
+.infoIcon:hover {
+  color: #38bdf8;
+  fill: #38bdf8;
+  transform: scale(1.1);
 }

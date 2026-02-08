@@ -27,8 +27,7 @@ export default function HeroCTA01() {
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
           Navigating success your trusted <br />
-          partner in{" "}
-          <span className="text-blue-500">IT Services*</span>
+          partner in <span className="text-blue-500">IT Services*</span>
         </h1>
 
         {/* Features */}
@@ -59,15 +58,80 @@ export default function HeroCTA01() {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-4 mt-10 flex-wrap justify-center md:justify-start">
-          <button className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all">
-            View all services
-          </button>
+<div className="flex gap-5 mt-10 flex-wrap justify-center md:justify-start">
 
-          <button className="px-6 py-3 rounded-full border border-white/40 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:scale-105 transition-all">
-            Request an estimate
-          </button>
-        </div>
+  {/* PRIMARY */}
+  <button
+    className="
+      group relative
+      px-10 py-3.5
+      rounded-full
+      text-white font-medium
+      bg-gradient-to-r from-blue-600 to-cyan-500
+      shadow-lg shadow-blue-500/40
+      overflow-hidden
+      transition-all duration-500
+      hover:scale-110
+      active:scale-[0.96]
+      focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-cyan-400
+      focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+      cursor-pointer
+    "
+  >
+    <span className="relative z-10">View all services</span>
+
+    {/* Shine */}
+    <span
+      className="
+        absolute inset-0
+        bg-gradient-to-r from-transparent via-white/40 to-transparent
+        -translate-x-full
+        group-hover:translate-x-full
+        group-active:translate-x-full
+        transition-transform duration-700
+      "
+    />
+  </button>
+
+  {/* SECONDARY (GLASS) */}
+  <button
+    className="
+      group relative
+      px-8 py-3.5
+      rounded-full
+      text-white font-medium
+      border border-white/30
+      bg-white/10 backdrop-blur-lg
+      shadow-lg
+      overflow-hidden
+      transition-all duration-500
+      hover:scale-110
+      active:scale-[0.96]
+      hover:border-blue-400
+      focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-blue-400
+      focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+      cursor-pointer
+    "
+  >
+    <span className="relative z-10">Request an estimate</span>
+
+    {/* Glow */}
+    <span
+      className="
+        absolute inset-0
+        bg-gradient-to-r from-blue-500/30 to-cyan-400/30
+        opacity-0
+        group-hover:opacity-100
+        group-active:opacity-100
+        transition
+      "
+    />
+  </button>
+
+</div>
+
       </div>
     </section>
   );

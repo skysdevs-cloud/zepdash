@@ -72,29 +72,56 @@ export default function AboutIntro() {
           </div>
 
           {/* Call Box */}
-          <div className="group flex items-center gap-4 bg-white shadow-md rounded-xl p-5 max-w-sm
-                          transition-all duration-300
-                          hover:shadow-xl hover:-translate-y-1">
+        <div
+  tabIndex={0}
+  className="
+    group flex items-center gap-4
+    bg-white shadow-md rounded-xl p-5 max-w-sm
+    transition-all duration-300
+    hover:shadow-xl hover:-translate-y-1
 
-            <div className="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center
-                            transition-transform duration-300
-                            group-hover:rotate-12 group-hover:scale-110">
-              <Phone className="text-white" />
-            </div>
+    active:scale-[0.97]
+    focus-visible:outline-none
+    focus-visible:ring-2 focus-visible:ring-blue-500
+    cursor-pointer
+  "
+>
+  {/* Icon */}
+  <div
+    className="
+      w-12 h-12 rounded-lg bg-blue-600
+      flex items-center justify-center
+      transition-all duration-300
+      group-hover:rotate-12 group-hover:scale-110
+      group-active:rotate-12 group-active:scale-110
+    "
+  >
+    <Phone className="text-white" />
+  </div>
 
-            <div>
-              <p className="text-sm text-gray-500">
-                Call to ask any question
-              </p>
-              <h4 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">
-                + 91 6307 764 702
-              </h4>
-              <p className="text-xs text-gray-500">
-                Around-the-clock service available
-              </p>
-            </div>
+  {/* Text */}
+  <div>
+    <p className="text-sm text-gray-500">
+      Call to ask any question
+    </p>
 
-          </div>
+    <h4
+      className="
+        text-lg font-bold text-gray-900
+        transition
+        group-hover:text-blue-600
+        group-active:text-blue-600
+      "
+    >
+      + 91 6307 764 702
+    </h4>
+
+    <p className="text-xs text-gray-500">
+      Around-the-clock service available
+    </p>
+  </div>
+</div>
+
 
         </div>
       </div>

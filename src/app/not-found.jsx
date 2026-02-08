@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4 bg-cover bg-center "
-      style={{ backgroundImage: "url('/images/404-error-bg-1.jpg')" }}
+      style={{ backgroundImage: "url('/image/404-error-bg-1.jpg')" }}
     >
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/20"></div>

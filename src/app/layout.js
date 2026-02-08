@@ -1,14 +1,9 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 
 import Header from "@/compontes/Header";   
 import Footer from "@/compontes/Footer";
-// import FAQSection from "@/compontes/FAQSection";
-// import ScrollToTop from "@/compontes/ScrollToTop";
-// import { ToastContainer } from "react-toastify";
-// import OurBlogIntro from "@/compontes/OurBlogIntro";
-// import Testimonial from "@/compontes/Testimonial";
-// import BookYourCabCTA from "@/compontes/BookYourCabCTA";
 import "react-toastify/dist/ReactToastify.css";
 import TestimonialSection from "@/compontes/Testimonial";
 
@@ -24,35 +19,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Pink City Cab Service | Taxi & Car Rental in Jaipur | Book Affordable Cabs",
+  title: "Zepdash | Website, App & Cloud Services Agency",
   description:
-    "Pink City Cab Service offers reliable taxi & car rental services in Jaipur. Book local cabs, outstation taxis, airport transfers & tempo travellers at best prices.",
+    "Zepdash is a full-service digital agency offering website development, mobile app solutions, cloud services, and data-driven solutions. Boost your business with innovative tech and expert support.",
 
   keywords: [
-    "Pink City Cab Service",
-    "Taxi service in Jaipur",
-    "Jaipur cab booking",
-    "Car rental in Jaipur",
-    "Airport taxi Jaipur",
-    "Outstation cab Jaipur",
-    "Tempo traveller Jaipur",
-    "Affordable taxi Jaipur"
+    "Zepdash",
+    "Website development agency",
+    "App development services",
+    "Cloud services provider",
+    "Data solutions company",
+    "Web & mobile app development",
+    "Cloud computing services",
+    "Digital agency for business",
+    "Tech solutions for companies",
+    "Software development agency"
   ],
 
-  authors: [{ name: "Pink City Cab Service" }],
+  authors: [{ name: "Zepdash" }],
 
   openGraph: {
-    title: "Pink City Cab Service | Reliable Taxi & Car Rental in Jaipur",
+    title: "Zepdash | Expert Web, App & Cloud Solutions",
     description:
-      "Book trusted cabs in Jaipur for local rides, airport transfer & outstation trips. Affordable pricing & professional drivers.",
-    url: "https://pinkcitycab.netlify.app/",
-    siteName: "Pink City Cab Service",
+      "Partner with Zepdash for professional website, app, cloud, and data services. Delivering innovative tech solutions for your business growth.",
+    url: "https://zepdash.netlify.app/",
+    siteName: "Zepdash",
     images: [
       {
         url: "/favicon.ico",
         width: 1200,
         height: 630,
-        alt: "Pink City Cab Service",
+        alt: "Zepdash Agency - Website & App Development",
       },
     ],
     type: "website",
@@ -60,9 +57,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pink City Cab Service | Taxi & Car Rental in Jaipur",
+    title: "Zepdash | Website, App & Cloud Development",
     description:
-      "Affordable taxi booking in Jaipur. Local, airport & outstation cabs available.",
+      "Zepdash offers website, mobile app, cloud, and data services. Innovative solutions to scale your business.",
     images: ["/favicon.ico"],
   },
 
@@ -76,22 +73,25 @@ export const metadata = {
 };
 
 
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300","400","500","600","700","800"],
+});
+
+export const inter = Inter({
+  subsets: ["latin"],
+});
+
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className}`}>
         <Header />
         {children}
         <TestimonialSection/>
         <Footer />
-        {/* <FAQSection/>
-             <Testimonial/>
-     <BookYourCabCTA/>
-     <OurBlogIntro/>
-        <ScrollToTop /> */}
-        {/* <ToastContainer /> */}
       </body>
     </html>
   );

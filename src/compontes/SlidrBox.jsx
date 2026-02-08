@@ -68,7 +68,7 @@ export default function SlidrBox() {
 
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-[95vh] md:min-h-[109vh]"
+      className="relative min-h-[90vh] md:min-h-[105vh] font-[Poppins]"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -129,45 +129,147 @@ export default function SlidrBox() {
                     ))}
                   </ul>
 
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition">
-                    Talk with expert
-                  </button>
+              <button
+  className="
+    group relative overflow-hidden
+    px-8 sm:px-10 py-3.5 sm:py-4
+    rounded-full
+    bg-gradient-to-r from-blue-600 to-cyan-500
+    text-white font-medium
+    shadow-lg shadow-blue-500/40
+    transition-all duration-300
+    hover:scale-105
+    active:scale-95
+    cursor-pointer
+  "
+>
+  {/* Shine Effect */}
+  <span
+    className="
+      absolute inset-0
+      bg-gradient-to-r from-transparent via-white/40 to-transparent
+      -translate-x-full
+      group-hover:translate-x-full
+      group-active:translate-x-full
+      transition-transform duration-700
+    "
+  />
+
+  {/* Text */}
+  <span className="relative z-10">Talk with expert</span>
+</button>
+
                 </div>
               </div>
 
               {/* RIGHT FORM – ONLY SLIDE 3 */}
               {/* RIGHT FORM – ONLY SLIDE 3 (HIDDEN ON MOBILE) */}
               {current === 2 && (
-                <div className="hidden md:block w-full max-w-md bg-white/15 backdrop-blur-lg border border-white/20 rounded-xl p-5 shadow-xl">
-                  <h3 className="text-lg font-semibold mb-4 text-white">
+                <div
+                  className="
+      hidden md:block w-full max-w-md
+      relative
+      bg-white/10 backdrop-blur-2xl
+      border border-white/20
+      rounded-2xl p-6
+      shadow-2xl shadow-blue-900/40
+      overflow-hidden
+    "
+                >
+                  {/* Glow Border */}
+                  <div
+                    className="
+        absolute inset-0 rounded-2xl
+        bg-gradient-to-br from-blue-500/30 to-cyan-400/30
+        opacity-20 blur-xl
+      "
+                  />
+
+                  <h3 className="relative text-xl font-semibold mb-5 text-white">
                     Inquiry Form
                   </h3>
 
-                  <form className="space-y-3">
+                  <form className="relative space-y-4">
+                    {/* Input */}
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full bg-white/10 border border-white/20 text-white placeholder-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+                      className="
+          w-full bg-white/5
+          border border-white/20
+          text-white placeholder-gray-300
+          rounded-lg px-4 py-2.5 text-sm
+          focus:outline-none
+          focus:border-blue-400
+          focus:ring-2 focus:ring-blue-500/30
+          transition
+        "
                     />
 
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full bg-white/10 border border-white/20 text-white placeholder-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+                      className="
+          w-full bg-white/5
+          border border-white/20
+          text-white placeholder-gray-300
+          rounded-lg px-4 py-2.5 text-sm
+          focus:outline-none
+          focus:border-blue-400
+          focus:ring-2 focus:ring-blue-500/30
+          transition
+        "
                     />
 
                     <textarea
                       rows="3"
                       placeholder="Your Message"
-                      className="w-full bg-white/10 border border-white/20 text-white placeholder-gray-300 rounded-md px-3 py-2 text-sm resize-none focus:outline-none focus:border-blue-400"
+                      className="
+          w-full bg-white/5
+          border border-white/20
+          text-white placeholder-gray-300
+          rounded-lg px-4 py-2.5 text-sm
+          resize-none
+          focus:outline-none
+          focus:border-blue-400
+          focus:ring-2 focus:ring-blue-500/30
+          transition
+        "
                     />
 
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm transition"
-                    >
-                      Send Inquiry
-                    </button>
+                    {/* Button */}
+<button
+  type="submit"
+  className="
+    group relative overflow-hidden
+    w-full py-3
+    rounded-full
+    bg-gradient-to-r from-blue-600 to-cyan-500
+    text-white text-sm font-medium
+    shadow-lg shadow-blue-500/40
+    transition-all duration-300
+    hover:scale-[1.03]
+    active:scale-95
+    cursor-pointer
+  "
+>
+  {/* Shine Effect */}
+  <span
+    className="
+      absolute inset-0
+      bg-gradient-to-r from-transparent via-white/40 to-transparent
+      -translate-x-full
+      group-hover:translate-x-full
+      group-active:translate-x-full
+      transition-transform duration-700
+    "
+  />
+
+  {/* Text */}
+  <span className="relative z-10">Send Inquiry</span>
+</button>
+
+
                   </form>
                 </div>
               )}
@@ -222,12 +324,73 @@ export default function SlidrBox() {
 
 function Card({ icon, title, desc }) {
   return (
-    <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:-translate-y-1 transition">
-      <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white mb-4">
+    <div
+      className="
+        group relative
+        bg-white rounded-2xl p-6
+        shadow-lg
+        transition-all duration-500
+        hover:-translate-y-3
+        hover:shadow-2xl hover:shadow-blue-500/30
+        overflow-hidden cursor-pointer
+      "
+    >
+      {/* Top Right Border Accent */}
+      <span
+        className="
+          absolute top-0 right-0
+          w-0 h-[3px]
+          bg-gradient-to-r from-blue-500 to-cyan-400
+          transition-all duration-500
+          group-hover:w-full
+        "
+      />
+      <span
+        className="
+          absolute top-0 right-0
+          w-[3px] h-0
+          bg-gradient-to-b from-blue-500 to-cyan-400
+          transition-all duration-500
+          group-hover:h-full
+        "
+      />
+
+      {/* Soft Shine */}
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-br from-blue-500/10 to-cyan-400/10
+          opacity-0 group-hover:opacity-100
+          transition duration-500
+        "
+      />
+
+      {/* Icon */}
+      <div
+        className="
+          relative z-10
+          w-14 h-14
+          bg-gradient-to-br from-blue-600 to-cyan-500
+          rounded-xl
+          flex items-center justify-center
+          text-white
+          mb-4
+          transition-transform duration-500
+          group-hover:scale-110 group-hover:rotate-3
+          shadow-lg shadow-blue-500/40
+        "
+      >
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2 text-gray-900">{title}</h3>
-      <p className="text-gray-600 text-sm">{desc}</p>
+
+      {/* Content */}
+      <h3 className="relative z-10 text-lg font-semibold mb-2 text-gray-900">
+        {title}
+      </h3>
+
+      <p className="relative z-10 text-gray-600 text-sm leading-relaxed">
+        {desc}
+      </p>
     </div>
   );
 }

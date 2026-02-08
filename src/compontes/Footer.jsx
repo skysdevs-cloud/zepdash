@@ -12,19 +12,14 @@ export default function Footer() {
 
         {/* LOGO + ABOUT */}
         <div>
-          <div className="flex items-center gap-2 mb-5">
-            <div className="w-9 h-9 bg-blue-600 rounded-md flex items-center justify-center font-bold">
-              in
-            </div>
-            <h2 className="text-xl font-semibold">
-              qord<span className="text-blue-500">.</span>
-            </h2>
-          </div>
+            <img
+            src="/image/zepdashLogo.webp"
+            alt="logo"
+            className="w-[120px] md:w-[150px]"
+          />
 
           <p className="text-gray-400 leading-relaxed mb-6">
-            Parturient elementum rutrum tristique inceptos sit amet suspendisse
-            velit parturient velit esse cillum dolore amet euit fugiat pariatur
-            elementum.
+          Zepdash is a next-generation AI and digital solutions company delivering intelligent websites, scalable web apps, and powerful mobile applications. We help businesses innovate, automate, and grow with cutting-edge technology.
           </p>
 
           {/* Social */}
@@ -97,7 +92,7 @@ export default function Footer() {
 
           <h3 className="text-lg font-semibold mb-4">Address</h3>
           <p className="text-gray-400 mb-6">
-            570 8th Ave, New York, NY 10018 United States.
+            189/C Jalaun Road New Patel Nagar Orai Jalaun Uttar Pradesh 285001.
           </p>
 
           <h3 className="text-lg font-semibold mb-3">Opening hours</h3>
@@ -135,7 +130,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm text-white/80">
 
           <p>
-            Copyright © 2025 Inqord. All rights reserved.
+            Copyright © 2025 <Link href="https://akashgoswami.netlify.app/" className="text-blue-400 hover:text-black">Skysdev</Link>. All rights reserved.
           </p>
 
           <div className="flex gap-5 mt-2 md:mt-0">
